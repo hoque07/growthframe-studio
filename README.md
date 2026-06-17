@@ -28,6 +28,12 @@ npm run build
 
 The production output is generated in `dist/`.
 
+For GitHub Pages branch deployment from `version-1`, build into `docs/`:
+
+```bash
+npm run build -- --outDir docs
+```
+
 ## GitHub Repository
 
 Recommended repository:
@@ -66,7 +72,7 @@ git checkout -b version-1
 git push -u origin version-1
 ```
 
-In GitHub, open the repository settings and set GitHub Pages to deploy from the `version-1` branch.
+In GitHub, open the repository settings and set GitHub Pages to deploy from the `version-1` branch and `/docs` folder.
 
 ## Version-2 Live Workflow
 
@@ -81,7 +87,7 @@ git commit -m "Release version 2"
 git push -u origin version-2
 ```
 
-In GitHub Pages settings, switch the source branch from `version-1` to `version-2`.
+Build version 2 into `docs/`, commit that output, then switch GitHub Pages settings from `version-1 /docs` to `version-2 /docs`.
 
 ## Version-3 Future Workflow
 
@@ -98,7 +104,7 @@ Use `version-3` for experiments. When it is stable, switch GitHub Pages to `vers
 1. Keep `version-1` untouched after first release.
 2. Build and test the newer branch locally.
 3. Push the newer branch to `https://github.com/hoque07/growthframe-studio`.
-4. Change GitHub Pages source branch in repository settings.
+4. Change GitHub Pages source branch and folder in repository settings.
 5. If the live site has an issue, switch GitHub Pages back to the last stable branch.
 
 ## Customization
@@ -137,4 +143,4 @@ This project is configured for GitHub Pages under:
 https://github.com/hoque07/growthframe-studio
 ```
 
-After pushing the selected version branch, enable Pages from that branch in GitHub repository settings. The deployed site will use the `/growthframe-studio/` base path.
+After pushing the selected version branch, enable Pages from that branch and the `/docs` folder in GitHub repository settings. The deployed site will use the `/growthframe-studio/` base path.
